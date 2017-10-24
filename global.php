@@ -1,16 +1,12 @@
 <?php
-
 function make($name)
 {
     global $generators;
-
     if (!isset($generators[$name])) {
         return;
     }
-
     return $generators[$name]['function']();
 }
-
 function random($length = 9, $add_dashes = false, $available_sets = 'luds', $special_chars = '!@#$%&*?')
 {
     $sets = [];
@@ -47,10 +43,8 @@ function random($length = 9, $add_dashes = false, $available_sets = 'luds', $spe
         $password = substr($password, $dash_len);
     }
     $dash_str .= $password;
-
     return $dash_str;
 }
-
 function generateRandomWPAKey($bits)
 {
     $in_bits = ['160', '504'];
@@ -58,7 +52,6 @@ function generateRandomWPAKey($bits)
         $buytes = $bits / 8;
         $WPAKey = 'NipPBM4AQkqCI5ThDOxJ6GocFKzjsd9SLbWXfR8Z1ywV72t3UmvEa0HeugnrlY';
         $key = substr(str_shuffle($WPAKey), 0, $buytes);
-
         return $key;
     } else {
         return;
@@ -70,13 +63,11 @@ function generateRandomWEPKey($bits)
     if (in_array($bits, $in_bits)) {
         $buytes = $bits / 8;
         $WEPKey = 'APWNZFpn8VYU5aOiMj9mvkH37hXd4T0btIgzf6JGeRBDCQ2rEs1lSwyKuoqLcx';
-
         return substr(str_shuffle($WEPKey), 0, $buytes);
     } else {
         return;
     }
 }
-
 $generators = [
     'password' => [
         'name'     => 'Decent Password',
@@ -148,6 +139,12 @@ $generators = [
         'name'     => 'WEP 256-bit Key',
         'function' => function () {
             return generateRandomWEPKey(256);
+        },
+    ],
+    'crc32' => [
+        'name'     => 'CRC32 Key',
+        'function' => function () {
+            return crc32(random(15));
         },
     ],
 ];
