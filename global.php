@@ -80,7 +80,9 @@ function generateRandomWEPKey($bits)
 function generateRandomSHAKey($bits)
 {
     $random_pass = random(15);
-    if ($bits == 256) {
+    if ($bits == 512 ) {
+        return hash('sha512', $random_pass);
+    } else if ($bits == 256) {
         return hash('sha256', $random_pass);
     } else if ($bits == 128) {
         return hash('md5', $random_pass);
@@ -160,6 +162,13 @@ $generators = [
         'name'     => 'WEP 256-bit Key',
         'function' => function () {
             return generateRandomWEPKey(256);
+        },
+    ],
+
+    'sha512' => [
+        'name'     => 'SHA 512-bit Key',
+        'function' => function () {
+            return generateRandomSHAKey(512);
         },
     ],
 
