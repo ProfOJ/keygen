@@ -52,7 +52,7 @@
 							
 							<div class="col-md-4 col-sm-6 col-xs-12">
 								<div class="thumbnail thumbnail-caption">
-							      	<img src="images/<?php echo $key; ?>-header.jpg" alt="100%x180">
+							      	<img src="images/<?php echo $key; ?>-header.jpg?t=<?php echo filemtime('images/'.$key.'-header.jpg'); ?>" alt="<?php echo $key; ?>">
 							      	<div class="caption">
 								        <h4><?php echo $g['name']; ?></h4>
 								        <p>
