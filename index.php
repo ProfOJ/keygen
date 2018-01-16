@@ -52,27 +52,22 @@
 							
 							<div class="col-md-4 col-sm-6 col-xs-12">
 								<div class="thumbnail thumbnail-caption">
-							      	<img src="images/<?php echo $key;
-                            ?>-header.jpg" alt="100%x180">
+							      	<img src="images/<?php echo $key; ?>-header.jpg" alt="100%x180">
 							      	<div class="caption">
-								        <h4><?php echo $g['name'];
-                            ?></h4>
+								        <h4><?php echo $g['name']; ?></h4>
 								        <p>
 									        <div class="form-group" style="padding-bottom: 40px;">
 												<div class="col-sm-12" style="padding: 0;">
 													<div class="input-icon">
 														<span class="fa fa-key"></span>
-														<input id="input-<?php echo $key;
-                            ?>" type="text" class="form-control" placeholder="generating...">
+														<input id="input-<?php echo $key; ?>" type="text" class="form-control" placeholder="generating...">
 													</div>
 												</div>
 											</div>
 								        </p>
 								        <p>
-								        	<a href="#fakeLink" class="btn btn-primary" style="width: 45%; float: left;" onclick="copy('<?php echo $key;
-                            ?>')">Copy</a>
-								        	<a href="#fakeLink" class="btn btn-default btn-stroke" style="width: 45%; float: right;" onclick="generate('<?php echo $key;
-                            ?>')">New</a>
+								        	<a href="#fakeLink" class="btn btn-primary" style="width: 45%; float: left;" onclick="copy('<?php echo $key; ?>')">Copy</a>
+								        	<a href="#fakeLink" class="btn btn-default btn-stroke" style="width: 45%; float: right;" onclick="generate('<?php echo $key; ?>')">New</a>
 								        	<div style="clear: both;"></div>
 								        </p>
 							      	</div>
@@ -80,7 +75,6 @@
 							</div>
 							
 							<?php
-
                         }
 
                         ?>
