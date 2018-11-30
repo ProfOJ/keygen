@@ -209,4 +209,11 @@ $generators = [
             return generateRandomSHAKey(128);
         },
     ],
+
+    'expressionengine' => [
+        'name'     => 'ExpressionEngine Key',
+        'function' => function () {
+            return sha1(uniqid(random_int(-PHP_INT_MAX, PHP_INT_MAX), true));
+        },
+    ],
 ];
